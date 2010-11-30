@@ -1,6 +1,6 @@
 #! /bin/sh
 apt-get -y install squashfs-tools genisoimage
-wget -O chroot.sh http://pwiki.grimp.eu/tools/code.php?p=Linux/1.0/build/chroot.sh
+#wget -O chroot.sh http://pwiki.grimp.eu/tools/code.php?p=Linux/1.0/build/chroot.sh
 chmod +x chroot.sh
 
 
@@ -26,7 +26,8 @@ cp ../chroot.sh edit/chroot.sh
 #Repo
 rm -rf edit/etc/apt/sources.list
 rm -rf edit/etc/apt/sources.list.d/*
-wget -O edit/etc/apt/sources.list http://pwiki.grimp.eu/tools/code.php?p=Linux/1.0/apt/sources.list
+cp ../apt/sources.list edit/etc/apt/sources.list
+#wget -O edit/etc/apt/sources.list http://pwiki.grimp.eu/tools/code.php?p=Linux/1.0/apt/sources.list
 
 # CHROOT
 chroot edit ./chroot.sh
